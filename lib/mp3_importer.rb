@@ -1,6 +1,3 @@
-require 'pry'
-
-
 class MP3Importer
   attr_accessor :path
 
@@ -8,14 +5,13 @@ class MP3Importer
     @path = path
   end
 
-  def files
-    Dir.glob("#{self.path}/*.mp3").collect {|file| file.gsub("./spec/fixtures/mp3s/", "")}
+  def import
+
   end
 
-  def import
-      files.each do |file_name|
-      Song.new_by_filename(file_name)
-    end
+  def files
+
   end
+
 
 end
