@@ -8,8 +8,8 @@ class MP3Importer
   end
 
   def files
-    @files = Dir.glob("@path") {|filename| filename}
-    binding.pry
+    @files = Dir.glob("@path") {|filename|
+    binding.pry filename}
   end
 
   def import
