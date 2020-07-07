@@ -11,6 +11,11 @@ class Song
   def self.all
     @@all
   end
+  
+  def artist_name=(artist_name)
+    self.artist = Artist.find_or_create_by_name(artist_name)
+    artist.add_song(self)
+  end
 
   def self.new_by_filename(file)
     file_array = file.chomp(".mp3").split(" - ")
@@ -19,9 +24,5 @@ class Song
     song
   end
 
-  def artist_name=(artist_name)
-    self.artist = Artist.find_or_create_by_name(artist_name)
-    artist.add_song(self)
-  end
 
 end
