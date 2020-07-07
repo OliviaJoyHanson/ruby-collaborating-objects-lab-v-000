@@ -8,8 +8,7 @@ class MP3Importer
   end
 
   def files
-    Dir.glob(@path){|filename|
-    filename}
+    Dir.glob(@path){|filename| filename}
   end
 
   def import
