@@ -9,7 +9,9 @@ class MP3Importer
 
   def files
     binding.pry
-    Dir.glob("@path")
+    Dir.glob("@path") do |filename|
+      filename
+    end
   end
 
   def import
